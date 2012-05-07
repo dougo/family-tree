@@ -38,3 +38,7 @@ gem 'jquery-rails'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 gem 'haml-rails'
+
+group :test do
+  gem 'capybara'
+end
