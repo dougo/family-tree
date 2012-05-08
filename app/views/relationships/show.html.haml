@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Relationship type:
+  = @relationship.relationship_type
+%p
+  %b Person:
+  = @relationship.person
+%p
+  %b Related person:
+  = @relationship.related_person
+
+= link_to 'Edit', edit_relationship_path(@relationship)
+\|
+= link_to 'Back', relationships_path

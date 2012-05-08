@@ -1,4 +1,6 @@
 FamilyTree::Application.routes.draw do
+  resources :relationships
+
   resources :relationship_types
 
   resources :people
