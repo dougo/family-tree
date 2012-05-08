@@ -11,6 +11,7 @@
     = f.text_field :name
   .field
     = f.label :date_of_birth
-    = f.date_select :date_of_birth, :prompt => true
+    = f.text_field :date_of_birth
+    YYYY or YYYY-MM or YYYY-MM-DD
   .actions
     = f.submit 'Save'

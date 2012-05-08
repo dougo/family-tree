@@ -2,6 +2,10 @@ class Person < ActiveRecord::Base
   attr_accessible :date_of_birth, :name
 
   validates :name, :presence => true
+  validates :date_of_birth, allow_nil: true, format: {
+    # TO DO: validate month/date in correct range
+    with: /\A\d{4}(-\d{1,2}(-\d{1,2})?)?\z/
+  }
 
   has_many :relationships
   has_many :reverse_relationships, class_name: 'Relationship', foreign_key: 'related_person_id'
