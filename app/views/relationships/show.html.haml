@@ -2,13 +2,13 @@
 
 %p
   %b Relationship type:
-  = @relationship.relationship_type
+  = @relationship.relationship_type.forward_name
 %p
   %b Person:
-  = @relationship.person
+  = @relationship.person.name
 %p
   %b Related person:
-  = @relationship.related_person
+  = @relationship.related_person.name
 
 = link_to 'Edit', edit_relationship_path(@relationship)
 \|

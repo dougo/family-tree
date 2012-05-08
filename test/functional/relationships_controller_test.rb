@@ -3,6 +3,11 @@ require 'test_helper'
 class RelationshipsControllerTest < ActionController::TestCase
   setup do
     @relationship = relationships(:one)
+    @relationship_params = {
+      relationship_type_id: relationship_types(:one),
+      person_id: people(:one),
+      related_person_id: people(:two)
+    }
   end
 
   test "should get index" do
@@ -18,7 +23,7 @@ class RelationshipsControllerTest < ActionController::TestCase
 
   test "should create relationship" do
     assert_difference('Relationship.count') do
-      post :create, relationship: {  }
+      post :create, relationship: @relationship_params
     end
 
     assert_redirected_to relationship_path(assigns(:relationship))
@@ -35,7 +40,7 @@ class RelationshipsControllerTest < ActionController::TestCase
   end
 
   test "should update relationship" do
-    put :update, id: @relationship, relationship: {  }
+    put :update, id: @relationship, relationship: @relationship_params
     assert_redirected_to relationship_path(assigns(:relationship))
   end
 

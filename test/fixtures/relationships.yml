@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  relationship_type: 
-  person: 
-  related_person: 
+  relationship_type: one
+  person: one
+  related_person: two
 
 two:
-  relationship_type: 
-  person: 
-  related_person: 
+  relationship_type: two
+  person: two
+  related_person: one
