@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  forward_name: MyString
+  backward_name: MyString
+
+two:
+  forward_name: MyString
+  backward_name: MyString

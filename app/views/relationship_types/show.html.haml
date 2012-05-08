@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Forward name:
+  = @relationship_type.forward_name
+%p
+  %b Backward name:
+  = @relationship_type.backward_name
+
+= link_to 'Edit', edit_relationship_type_path(@relationship_type)
+\|
+= link_to 'Back', relationship_types_path

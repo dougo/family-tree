@@ -1,4 +1,6 @@
 FamilyTree::Application.routes.draw do
+  resources :relationship_types
+
   resources :people
 
   get "home/index"

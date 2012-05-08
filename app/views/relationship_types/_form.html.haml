@@ -1,0 +1,16 @@
+= form_for @relationship_type do |f|
+  -if @relationship_type.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@relationship_type.errors.count, "error")} prohibited this relationship_type from being saved:"
+      %ul
+        - @relationship_type.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :forward_name
+    = f.text_field :forward_name
+  .field
+    = f.label :backward_name
+    = f.text_field :backward_name
+  .actions
+    = f.submit 'Save'
