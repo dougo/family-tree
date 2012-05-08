@@ -7,6 +7,18 @@
   %b Date of birth:
   = @person.date_of_birth
 
+- @person.all_relationships.each do |rel|
+  %p
+    - if rel.person == @person
+      %b #{rel.relationship_type.forward_name.titleize}:
+      = link_to rel.related_person.name, rel.related_person
+    - else
+      %b #{rel.relationship_type.backward_name.titleize}:
+      = link_to rel.person.name, rel.person
+
 = link_to 'Edit', edit_person_path(@person)
 \|
+= link_to 'New Relationship', new_relationship_path
+\|
 = link_to 'Back', people_path
+
