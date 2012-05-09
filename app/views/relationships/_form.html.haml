@@ -7,10 +7,10 @@
           %li= msg
 
   .field
-    = f.label :relationship_type
+    = f.label :relationship_type_id
     = f.collection_select :relationship_type_id, RelationshipType.all, :id, :name, :include_blank => true
   .field
-    = f.label :related_person
+    = f.label :related_person_id
     = f.collection_select :related_person_id, Person.all, :id, :name, :include_blank => true
   .actions
     = f.submit 'Save'
