@@ -10,10 +10,10 @@
 - @person.all_relationships.each do |rel|
   %p
     - if rel.person == @person
-      %b #{rel.relationship_type.forward_name.titleize}:
+      %b #{rel.relationship_type.name.titleize}:
       = link_to rel.related_person.name, rel.related_person
     - else
-      %b #{rel.relationship_type.backward_name.titleize}:
+      %b #{rel.relationship_type.name_of_backward_relationship.titleize}:
       = link_to rel.person.name, rel.person
 
 = link_to 'Edit', edit_person_path(@person)

@@ -1,8 +1,8 @@
-%h1 Listing relationship_types
+%h1 Listing relationship types
 
 %table
   %tr
-    %th Forward name
+    %th Name
     %th Backward name
     %th
     %th
@@ -10,8 +10,8 @@
 
   - @relationship_types.each do |relationship_type|
     %tr
-      %td= relationship_type.forward_name
-      %td= relationship_type.backward_name
+      %td= relationship_type.name
+      %td= relationship_type.read_attribute :backward_name
       %td= link_to 'Show', relationship_type
       %td= link_to 'Edit', edit_relationship_type_path(relationship_type)
       %td= link_to 'Destroy', relationship_type, :confirm => 'Are you sure?', :method => :delete

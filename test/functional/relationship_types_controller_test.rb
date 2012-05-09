@@ -18,7 +18,7 @@ class RelationshipTypesControllerTest < ActionController::TestCase
 
   test "should create relationship_type" do
     assert_difference('RelationshipType.count') do
-      post :create, relationship_type: { backward_name: @relationship_type.backward_name, forward_name: @relationship_type.forward_name }
+      post :create, relationship_type: { backward_name: @relationship_type.backward_name, name: @relationship_type.name }
     end
 
     assert_redirected_to relationship_type_path(assigns(:relationship_type))
@@ -35,7 +35,7 @@ class RelationshipTypesControllerTest < ActionController::TestCase
   end
 
   test "should update relationship_type" do
-    put :update, id: @relationship_type, relationship_type: { backward_name: @relationship_type.backward_name, forward_name: @relationship_type.forward_name }
+    put :update, id: @relationship_type, relationship_type: { backward_name: @relationship_type.backward_name, name: @relationship_type.name }
     assert_redirected_to relationship_type_path(assigns(:relationship_type))
   end
 

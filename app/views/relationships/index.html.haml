@@ -10,7 +10,7 @@
 
   - @relationships.each do |relationship|
     %tr
-      %td= relationship.relationship_type.forward_name
+      %td= relationship.relationship_type.name
       %td= relationship.related_person.name
       %td= link_to 'Show', person_relationship_path(@person, relationship)
       %td= link_to 'Edit', edit_person_relationship_path(@person, relationship)
