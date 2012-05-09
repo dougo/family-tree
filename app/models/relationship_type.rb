@@ -1,6 +1,8 @@
 class RelationshipType < ActiveRecord::Base
   attr_accessible :name, :backward_name
 
+  has_many :relationships, :dependent => :destroy
+
   validates :name, :presence => true
 
   before_save do
