@@ -10,6 +10,8 @@ the database.
 Installation
 ------------
 
+ # bundle
+
  # cp config/database.yml.example config/database.yml
 
  # rake db:setup
