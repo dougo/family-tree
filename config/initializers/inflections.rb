@@ -13,3 +13,12 @@
 # ActiveSupport::Inflector.inflections do |inflect|
 #   inflect.acronym 'RESTful'
 # end
+
+class String
+  # ActiveSupport::Inflector#titleize erases hyphens, because it
+  # starts with humanize(underscore(str)).  This just does the
+  # capitalization part.
+  def just_titleize
+    gsub(/\b('?[a-z])/) { $1.capitalize }
+  end
+end
