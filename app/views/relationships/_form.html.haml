@@ -1,4 +1,4 @@
-= form_for @relationship do |f|
+= form_for [@person, @relationship] do |f|
   -if @relationship.errors.any?
     #error_explanation
       %h2= "#{pluralize(@relationship.errors.count, "error")} prohibited this relationship from being saved:"
@@ -9,9 +9,6 @@
   .field
     = f.label :relationship_type
     = f.collection_select :relationship_type_id, RelationshipType.all, :id, :forward_name, :include_blank => true
-  .field
-    = f.label :person
-    = f.collection_select :person_id, Person.all, :id, :name, :include_blank => true
   .field
     = f.label :related_person
     = f.collection_select :related_person_id, Person.all, :id, :name, :include_blank => true

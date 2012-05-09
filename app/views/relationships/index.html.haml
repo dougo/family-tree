@@ -1,9 +1,8 @@
-%h1 Listing relationships
+%h1 Listing relationships for #{@person.name}
 
 %table
   %tr
     %th Relationship type
-    %th Person
     %th Related person
     %th
     %th
@@ -12,12 +11,13 @@
   - @relationships.each do |relationship|
     %tr
       %td= relationship.relationship_type.forward_name
-      %td= relationship.person.name
       %td= relationship.related_person.name
-      %td= link_to 'Show', relationship
-      %td= link_to 'Edit', edit_relationship_path(relationship)
-      %td= link_to 'Destroy', relationship, :confirm => 'Are you sure?', :method => :delete
+      %td= link_to 'Show', person_relationship_path(@person, relationship)
+      %td= link_to 'Edit', edit_person_relationship_path(@person, relationship)
+      %td= link_to 'Destroy', person_relationship_path(@person, relationship), :confirm => 'Are you sure?', :method => :delete
 
 %br
 
-= link_to 'New Relationship', new_relationship_path
+= link_to 'New Relationship', new_person_relationship_path(@person)
+\|
+= link_to 'Back', edit_person_path(@person)

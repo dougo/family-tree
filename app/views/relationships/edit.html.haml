@@ -1,7 +1,7 @@
-%h1 Editing relationship
+%h1 Editing relationship for #{@person.name}
 
 = render 'form'
 
-= link_to 'Show', @relationship
+= link_to 'Show', person_relationship_path(@person, @relationship)
 \|
-= link_to 'Back', relationships_path
+= link_to 'Back', person_relationships_path(@person)

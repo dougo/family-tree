@@ -1,15 +1,15 @@
 %p#notice= notice
 
 %p
-  %b Relationship type:
-  = @relationship.relationship_type.forward_name
-%p
   %b Person:
   = @relationship.person.name
+%p
+  %b Relationship type:
+  = @relationship.relationship_type.forward_name
 %p
   %b Related person:
   = @relationship.related_person.name
 
-= link_to 'Edit', edit_relationship_path(@relationship)
+= link_to 'Edit', edit_person_relationship_path(@person, @relationship)
 \|
-= link_to 'Back', relationships_path
+= link_to 'Back', person_relationships_path(@person)
