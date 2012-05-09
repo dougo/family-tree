@@ -10,10 +10,13 @@ the database.
 Installation
 ------------
 
-# cp config/database.yml.example config/database.yml
-# rake db:setup
-# rake test
-# rails server
+ # cp config/database.yml.example config/database.yml
+
+ # rake db:setup
+
+ # rake test
+
+ # rails server
 
 Browse to: localhost:3000
 
