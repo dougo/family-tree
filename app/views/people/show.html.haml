@@ -10,7 +10,7 @@
 - @person.all_relationships.each do |rel|
   %p
     - if rel.person == @person
-      %b #{rel.relationship_type.name.titleize}:
+      %b #{rel.relationship_type.name.just_titleize}:
       = link_to rel.related_person.name, rel.related_person
     - else
       %b #{rel.relationship_type.name_of_backward_relationship.just_titleize}:
